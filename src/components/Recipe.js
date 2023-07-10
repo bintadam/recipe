@@ -11,7 +11,7 @@ function Recipe(){
         const apiKey = "bf0acb16afc9e3c4872b10e28feb17e2"
 
         const response = await axios.get(`https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${apiKey}&health=alcohol-free`)
-        setData(response.data)
+        setData(response.data.hits)
         console.log(response.data)
     }
 
@@ -55,10 +55,14 @@ function Recipe(){
                 </form>
                 {data.map((rec, index) => (
                     <div key={index}>
-                        <img src={rec.recipe.image} alt={rec.recipe.label}/>
-                        <p>{rec.recipe.label}</p>
-                        <p>{rec.recipe.ingredientLines}</p>
-                        <p>{rec.recipe.ingredients}</p>
+                        <img src={rec['recipe']['image']} alt={rec['recipe']['label']}/>
+                        <p>{rec['recipe']['label']}</p>
+                        {rec['recipe']['ingredientLines'].map((line, lineIndex)=>(
+                            <p key={lineIndex}>{line}</p>
+                        ))}
+                        {rec['recipe']['ingredients'].map((ingredient, ingredientIndex) => (
+                            <p key={ingredientIndex}>{ingredient.text}</p>
+                        ))}
                     </div>
                 ))}
             </div>
