@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Recipe(){
     const [data, setData] = useState([]);
@@ -11,9 +11,22 @@ function Recipe(){
 
     const fetchData = async() => {
         const response = await axios.get(`https://api.edamam.com/search?q=${searchString}app_id=${appId}&app_key=${apiKey}&health=${list}`)
-        setData(response.data.hits)
-        console.log(response.data)
+        if(!response.ok){
+            throw new Error("Data could not be fetched!")
+        } else{
+            return response.json()
+        }
     }
+
+    useEffect(() => {
+        fetchData()
+        .then((res) => { 
+            setData(res)
+        })
+        .catch((error) => {
+            console.error(error)
+        })
+    }, [])
     return (
         <div></div>
     )
