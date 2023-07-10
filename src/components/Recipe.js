@@ -26,49 +26,45 @@ function Recipe(){
 
     return (
         <div>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <input value={query}             placeholder="Search recipe"
-                    style={{
-                        padding: "7px",
-                        backgroundColor: "white",
-                        width: "30%",
-                        fontSize: "14px",
-                        border: "none",
-                        borderBottom: "0.2px solid #ffff",
-                    }} 
-                    onChange={(e) => setQuery(e.target.value)}/>
-                    <button
-                        type="submit"
-                        style={{
-                        margin: "10px",
-                        backgroundColor: "#805190",
-                        color: "white",
-                        padding: "8px 18px",
-                        border: "none",
-                        fontSize: "14px", 
-                        fontWeight: "300"
-                        }}
-                    >
+
+            <div className=" py-4 bg-slate-900">
+
+                <form onSubmit={handleSubmit} className=" inline-block grid place-items-center">
+
+                    <input value={query}  placeholder="Search recipe" 
+
+                        onChange={(e) => setQuery(e.target.value)} className="border-0 p-1  border-b-2 bg-slate-900 text-white"/>
+
+                    <button className="bg-slate-100 border-0 py-1 px-4 font-base ">
+
                         Search
                     </button>
+
                 </form>
-                <div className="grid grid-cols-2 bg-violet-600 w-full">
+                <div className="grid grid-cols-2 px-24 w-full text-white">
                     {data.map((rec, index) => (
-                        <div key={index} className="p-2  m-4 border rounded-sm bg-violet-400 w-4/5 opacity-40 text-white shadow-xl justify-between">
+                        <div key={index} className="p-4  border-0  rounded-sm bg-slate-800  w-4/5  m-4 opacity-80" >
                             <div className="block">
-                                <img src={rec['recipe']['image']} alt={rec['recipe']['label']} className="h-26 w-max"/>
+                                <img src={rec['recipe']['image']} alt={rec['recipe']['label']} className=" w-24 rounded-full "/>
                             </div>
+
                             <div>
-                                <p>{rec['recipe']['label']}</p>
+
+                                <p className="text-base font-base mt-4 underline">{rec['recipe']['label']}</p>
                                 {rec['recipe']['ingredientLines'].map((line, lineIndex)=>(
-                                <p key={lineIndex} className="font-thin text-base">{line}</p>
+                                <p key={lineIndex} className="font-thin text-sm">{line}</p>
                             ))}
+
                             </div>
+
                         </div>
+
                     ))}
+
                 </div>
+
             </div>
+
         </div>
     )
 }
