@@ -1,7 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   background-color: #302435;
-  color: #ffff;
+  padding: 2% 12%;
 }
 
 code {

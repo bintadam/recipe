@@ -53,18 +53,21 @@ function Recipe(){
                         Search
                     </button>
                 </form>
-                {data.map((rec, index) => (
-                    <div key={index}>
-                        <img src={rec['recipe']['image']} alt={rec['recipe']['label']}/>
-                        <p>{rec['recipe']['label']}</p>
-                        {rec['recipe']['ingredientLines'].map((line, lineIndex)=>(
-                            <p key={lineIndex}>{line}</p>
-                        ))}
-                        {rec['recipe']['ingredients'].map((ingredient, ingredientIndex) => (
-                            <p key={ingredientIndex}>{ingredient.text}</p>
-                        ))}
-                    </div>
-                ))}
+                <div className="grid grid-cols-2 bg-violet-600 w-full">
+                    {data.map((rec, index) => (
+                        <div key={index} className="p-2  m-4 border rounded-sm bg-violet-400 w-4/5 opacity-40 text-white shadow-xl justify-between">
+                            <div className="block">
+                                <img src={rec['recipe']['image']} alt={rec['recipe']['label']} className="h-26 w-max"/>
+                            </div>
+                            <div>
+                                <p>{rec['recipe']['label']}</p>
+                                {rec['recipe']['ingredientLines'].map((line, lineIndex)=>(
+                                <p key={lineIndex} className="font-thin text-base">{line}</p>
+                            ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
