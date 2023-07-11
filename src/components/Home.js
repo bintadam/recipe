@@ -1,12 +1,13 @@
 import heroImage from "../images/images.jpeg";
+import {GoArrowRight} from "react-icons/go"
 function Home() {
   return (
-    <div className="relative">
-            <div className="absolute left-25">
-                <h1 className=" text-3xl p-6 text-white font-thin ">" Search for simple & <br></br>healthy delicious <br></br>recipes fo enjoy "</h1>
-                <p className="bg-white px-0 py-4">Get the recipe now </p>
+    <div className="relative font-['Open Sans']">
+            <div className="absolute top-56 left-16 p-6">
+                <p className=" text-5xl text-slate-100 font-thin tracking-wide">Search for simple & healthy  <br></br> delicious recipes for you to enjoy <br></br> and bring smile on the faces around <br></br> you through our easiest recipes</p>
+                <p className="inline-flex bg-white px-8 my-16 text-2xl font-semibold py-4 text-slate-800">RECIPE<GoArrowRight className="m-1"/> </p>
         </div>
-        <img  className="bg-cover bg-no-repeat" src={heroImage} alt="ingredient"/>
+        <img  className="bg-cover bg-no-repeat h-screen" src={heroImage} alt="ingredient"/>
     </div>
   );
 }
