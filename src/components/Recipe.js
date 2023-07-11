@@ -29,7 +29,7 @@ function Recipe(){
 
             <div className=" py-4 bg-slate-900">
 
-                <form onSubmit={handleSubmit} className=" inline-block grid place-items-center">
+                <form onSubmit={handleSubmit} className=" inline-block items-center">
 
                     <input value={query}  placeholder="Search recipe" 
 
