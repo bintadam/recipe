@@ -1,11 +1,9 @@
-import heroImage from "../images/hero-photo.avif";
+import heroImage from "../images/images.jpeg";
 function Home() {
   return (
-    <div className="bg-cover bg-no-repeat bg-slate-900 text-white">
-        <h1 className="relative">Search for simple and delicious recipes to enjoy while keeping track of
-        the calories</h1>
-        <img src={heroImage} alt="ingredient"/>
-
+    <div className="relative">
+        <img  className="bg-cover bg-no-repeat" src={heroImage} alt="ingredient"/>
+        <h1 className="flex absolute top-20  text-3xl p-6 font-thin text-white">" Search for simple & healthy delicious recipes fo enjoy "</h1>
     </div>
   );
 }
