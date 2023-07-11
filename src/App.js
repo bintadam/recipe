@@ -1,14 +1,11 @@
 import Recipe from "./components/Recipe";
+import Home from "./components/Home"
 
 function App() {
   return (
-    <div className="App">
-        <div>
-            <img src={ingredientImage} alt="ingredient"/>
-            <img src={burgerImage} alt="burger"/>
-            <img src={vegetableImage} alt="vegetable"/>
-        </div>
-        <Recipe/>
+    <div>
+      <Home/>
+      <Recipe/>
     </div>
   );
 }
