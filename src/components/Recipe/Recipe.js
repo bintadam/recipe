@@ -14,8 +14,8 @@ function Recipe(){
 
 
     const fetchData = async() => {
-        const appId = "f41fd6ca"
-        const apiKey = "bf0acb16afc9e3c4872b10e28feb17e2"
+        const appId = process.env.REACT_APP_APP_ID;
+        const apiKey = process.env.REACT_APP_API_KEY;
 
         const response = await axios.get(`https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${apiKey}&health=alcohol-free`)
         setData(response.data.hits)
