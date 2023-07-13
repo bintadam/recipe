@@ -80,7 +80,7 @@ function Recipe(){
             
                         <input value={query}  placeholder="Search recipe" 
                             type="text"
-                            onChange={(e) => setQuery(e.target.value)} className="border-0 py-3 pr-12 pl-2 text-black border-none focus:outline-none text-base"/>
+                            onChange={(e) => setQuery(e.target.value)} className="border-0 py-3 pr-20 pl-2 text-black border-none focus:outline-none text-base"/>
             
                         <button className="bg-slate-100 ml-1 mt-1 border-0 py-3 px-4 font-base text-medium">
                             Search
